@@ -1,4 +1,4 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { Github, Linkedin, Instagram, Facebook } from "lucide-react"; // Import Facebook icon
 import React from "react";
 
 export const Hero = () => {
@@ -33,24 +33,58 @@ export const Hero = () => {
         </div>
 
         <div className="flex gap-4 mb-8 animate-slide-up-delay-4">
-          <button className="px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+          <a
+            href="#projects" // Scroll to the projects section
+            className="px-6 py-3 rounded-lg border border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+          >
             Projects
-          </button>
-          <button className="px-6 py-3 rounded-lg border border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+          </a>
+          <button
+            onClick={() => {
+              // Scroll to the Contact section smoothly
+              document.getElementById('contact')?.scrollIntoView({
+                behavior: 'smooth',
+              });
+            }}
+            className="px-6 py-3 rounded-lg border border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+          >
             Contact
           </button>
         </div>
 
         <div className="flex gap-4 animate-slide-up-delay-5">
-          {[Github, Linkedin, Instagram].map((Icon, index) => (
-            <a
-              key={index}
-              href="#"
-              className="text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-110 transform"
-            >
-              <Icon size={24} className="animate-pulse-slow" style={{ animationDelay: `${index * 0.2}s` }} />
-            </a>
-          ))}
+          <a
+            href="https://github.com/achiraf288" // Replace with your GitHub profile URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-110 transform"
+          >
+            <Github size={24} className="animate-pulse-slow" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/achira-fonseka-7a9936272/" // Replace with your LinkedIn profile URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-110 transform"
+          >
+            <Linkedin size={24} className="animate-pulse-slow" />
+          </a>
+          <a
+            href="https://www.instagram.com/compact_r_a_c_e_r/?next=%2F" // Replace with your Instagram profile URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-110 transform"
+          >
+            <Instagram size={24} className="animate-pulse-slow" />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100010499584646" // Replace with your Facebook profile URL
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-purple-400 transition-all duration-300 hover:scale-110 transform"
+          >
+            <Facebook size={24} className="animate-pulse-slow" />
+          </a>
         </div>
       </div>
 

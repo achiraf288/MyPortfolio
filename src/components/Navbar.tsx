@@ -17,7 +17,7 @@ export const Navbar = () => {
 
       {/* Navigation Links */}
       <div className="flex gap-8 ml-auto"> {/* Added ml-auto to push items to the right */}
-        {["Home", "About", "Portfolio", "Contact"].map((item, index) => (
+        {["", "", "", ""].map((item, index) => (
           <button
             key={item}
             className="text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 transform"

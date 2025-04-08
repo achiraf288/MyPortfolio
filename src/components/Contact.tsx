@@ -8,16 +8,21 @@ import {
   Linkedin,
   Image,
 } from "lucide-react";
+
 const FormInput = ({
   icon: Icon,
   placeholder,
   type = "text",
   textArea = false,
+  value,
+  onChange,
 }: {
   icon: any;
   placeholder: string;
   type?: string;
   textArea?: boolean;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
 }) => {
   return (
     <div className="relative">
@@ -28,27 +33,39 @@ const FormInput = ({
         <textarea
           className="w-full h-32 bg-gray-900/50 rounded-lg pl-12 pr-4 py-3 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
         />
       ) : (
         <input
           type={type}
           className="w-full bg-gray-900/50 rounded-lg pl-12 pr-4 py-3 text-gray-300 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300"
           placeholder={placeholder}
+          value={value}
+          onChange={onChange}
         />
       )}
     </div>
   );
 };
+
 export const Contact = () => {
   const [commentName, setCommentName] = useState("");
   const [commentMessage, setCommentMessage] = useState("");
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // You can handle form submission here (e.g., send the form data to your backend or API)
+    alert("Message Sent!");
+  };
+
   return (
-    <section className="w-full px-6 py-20">
+    <section id="contact" className="w-full px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-5xl font-bold text-purple-400 mb-4">
-            Contact Me
-          </h2>
+          <h2 className="text-5xl font-bold text-purple-400 mb-4">Contact Me</h2>
           <p className="text-gray-400">
             Got a question? Send me a message, and I'll get back to you soon.
           </p>
@@ -64,15 +81,31 @@ export const Contact = () => {
               <p className="text-gray-400 mb-8">
                 Have something to discuss? Send me a message and let's talk.
               </p>
-              <form className="space-y-6">
-                <FormInput icon={User} placeholder="Your Name" />
-                <FormInput icon={Mail} placeholder="Your Email" type="email" />
+              <form className="space-y-6" onSubmit={handleFormSubmit}>
+                <FormInput
+                  icon={User}
+                  placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <FormInput
+                  icon={Mail}
+                  placeholder="Your Email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <FormInput
                   icon={MessageSquare}
                   placeholder="Your Message"
                   textArea
+                  value={commentMessage}
+                  onChange={(e) => setCommentMessage(e.target.value)}
                 />
-                <button className="w-full px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+                <button
+                  type="submit"
+                  className="w-full px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                >
                   <Send size={20} />
                   Send Message
                 </button>
@@ -88,6 +121,7 @@ export const Contact = () => {
               </div>
             </div>
           </div>
+
           {/* Comments Section */}
           <div className="animate-slide-up delay-100">
             <div className="bg-purple-900/10 backdrop-blur-sm rounded-xl p-8">

@@ -3,12 +3,14 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import { TechStack } from "./TechStack";
 import { useNavigate } from "react-router-dom";
 import IotProjectPic from "../assets/IotProjectPic.jpg";
+
 interface ProjectCardProps {
   title: string;
   description: string;
   image: string;
   demoLink: string;
 }
+
 const ProjectCard = ({
   title,
   description,
@@ -44,6 +46,7 @@ const ProjectCard = ({
     </div>
   );
 };
+
 export const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("Projects");
   const projects = [
@@ -67,8 +70,7 @@ export const Portfolio = () => {
       title: "Agricultural spraying robot (IOT Robotic Project)",
       description:
         "An IoT-based robotic system designed to automate pesticide spraying in agricultural fields. It improves efficiency and safety by remotely controlling spray operations and monitoring field conditions.",
-      image:
-      IotProjectPic,
+      image: IotProjectPic,
       demoLink: "#",
     },
     {
@@ -87,15 +89,8 @@ export const Portfolio = () => {
         "https://cdn.dribbble.com/userupload/9263082/file/original-326af6b6ae5f6840c08957521746be0b.jpg?crop=0x0-1920x1440&resize=1600x1200",
       demoLink: "#",
     },
-    {
-      title: "",
-      description:
-        "",
-      image:
-        "",
-      demoLink: "#",
-    },
   ];
+
   const renderContent = () => {
     switch (activeTab) {
       case "Tech Stack":
@@ -116,8 +111,9 @@ export const Portfolio = () => {
         );
     }
   };
+
   return (
-    <section className="w-full px-6 py-20">
+    <section id="projects" className="w-full px-6 py-20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-5xl font-bold text-purple-400 mb-4">
@@ -129,16 +125,27 @@ export const Portfolio = () => {
             learning path.
           </p>
         </div>
-        <div className="flex justify-center gap-8 mb-12">
-          {["Projects", "Certificates", "Tech Stack"].map((tab) => (
+        <div className="flex justify-center mb-8">
+          <div className="flex gap-6">
             <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={`px-8 py-3 rounded-lg transition-all duration-300 ${activeTab === tab ? "bg-purple-600 text-white" : "bg-purple-900/20 text-gray-400 hover:bg-purple-900/30"}`}
+              onClick={() => setActiveTab("Projects")}
+              className="text-gray-400 hover:text-purple-400 transition-colors"
             >
-              {tab}
+              Projects
             </button>
-          ))}
+            <button
+              onClick={() => setActiveTab("Tech Stack")}
+              className="text-gray-400 hover:text-purple-400 transition-colors"
+            >
+              Tech Stack
+            </button>
+            <button
+              onClick={() => setActiveTab("Certificates")}
+              className="text-gray-400 hover:text-purple-400 transition-colors"
+            >
+              Certificates
+            </button>
+          </div>
         </div>
         {renderContent()}
       </div>
