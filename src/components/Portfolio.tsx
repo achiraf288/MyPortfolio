@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { TechStack } from "./TechStack";
 import { useNavigate } from "react-router-dom";
+import IotProjectPic from "../assets/IotProjectPic.jpg";
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -47,51 +48,51 @@ export const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("Projects");
   const projects = [
     {
-      title: "House Rental System (Final HND Project)",
+      title: "House Rental System Android App (Final HND Project)",
       description:
-        "Program ini dirancang untuk mempermudah pengguna dalam menyelesaikan soal-soal Aritmatika secara otomatis.",
+        "A mobile and web-based platform that helps users find and list rental properties. Built with Android Studio and React using a Laravel API, it includes features like property comparison, reviews, and a chatbot for user support.",
       image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500",
+        "https://cdn.dribbble.com/userupload/11935098/file/original-9c8d143ef80a46804e68b425f499ba4c.png?resize=1600x1200",
       demoLink: "#",
     },
     {
       title: "Time Management System (website) for Jayasiri Motors base on Laravel",
       description:
-        "AutoChat adalah solusi otomatisasi untuk mengirim pesan ke saluran Discord secara terjadwal.",
+        "A Laravel-based web application developed for Jayasiri Motors to manage employee work hours, tasks, and schedules efficiently. The system improves productivity by tracking time logs and streamlining daily operations.",
       image:
-        "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=500",
+        "https://png.pngtree.com/png-clipart/20210801/original/pngtree-time-management-website-homepage-template-png-image_6586724.jpg",
       demoLink: "#",
     },
     {
       title: "Agricultural spraying robot (IOT Robotic Project)",
       description:
-        "Buku Catatan adalah website yang memungkinkan pengguna untuk membuat, menyimpan, dan mengelola catatan.",
+        "An IoT-based robotic system designed to automate pesticide spraying in agricultural fields. It improves efficiency and safety by remotely controlling spray operations and monitoring field conditions.",
       image:
-        "https://images.unsplash.com/photo-1517842645767-c639042777db?w=500",
+      IotProjectPic,
       demoLink: "#",
     },
     {
-      title: "Portfolio Website",
+      title: "Bookshop management system",
       description:
-        "A modern portfolio website showcasing my projects and skills.",
+        "A software application designed to manage book inventory, sales, customer records, and billing in a bookshop. It streamlines daily operations and improves overall efficiency for store management.",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500",
+        "https://2.bp.blogspot.com/-0WSA6wgAAXE/WXNkgGhmvxI/AAAAAAAAD8Y/uzmd31DFnloJrMbLkmK2H4H43AyCkzE-gCLcBGAs/w1200-h630-p-k-no-nu/book%2Bshop.jpg",
       demoLink: "#",
     },
     {
-      title: "Education Platform",
+      title: "House Rental System Web (Final HND Project)",
       description:
-        "An interactive learning platform for students and educators.",
+        "A web-based platform built with React, PHP, and Laravel that allows users to search, compare, and list rental properties. It features real-time data, property reviews, and seamless integration with the mobile app via a Laravel API.",
       image:
-        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=500",
+        "https://cdn.dribbble.com/userupload/9263082/file/original-326af6b6ae5f6840c08957521746be0b.jpg?crop=0x0-1920x1440&resize=1600x1200",
       demoLink: "#",
     },
     {
-      title: "Personal Blog",
+      title: "",
       description:
-        "A minimalist blog platform for sharing thoughts and experiences.",
+        "",
       image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=500",
+        "",
       demoLink: "#",
     },
   ];
