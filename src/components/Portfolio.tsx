@@ -47,7 +47,7 @@ export const Portfolio = () => {
   const [activeTab, setActiveTab] = useState("Projects");
   const projects = [
     {
-      title: "Aritmatika Solver",
+      title: "House Rental System (Final HND Project)",
       description:
         "Program ini dirancang untuk mempermudah pengguna dalam menyelesaikan soal-soal Aritmatika secara otomatis.",
       image:
@@ -55,7 +55,7 @@ export const Portfolio = () => {
       demoLink: "#",
     },
     {
-      title: "AutoChat-Discord",
+      title: "Time Management System (website) for Jayasiri Motors base on Laravel",
       description:
         "AutoChat adalah solusi otomatisasi untuk mengirim pesan ke saluran Discord secara terjadwal.",
       image:
@@ -63,7 +63,7 @@ export const Portfolio = () => {
       demoLink: "#",
     },
     {
-      title: "Buku Catatan",
+      title: "Agricultural spraying robot (IOT Robotic Project)",
       description:
         "Buku Catatan adalah website yang memungkinkan pengguna untuk membuat, menyimpan, dan mengelola catatan.",
       image:
