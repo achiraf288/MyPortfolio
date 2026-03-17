@@ -1,6 +1,14 @@
 import React from "react";
 import { Download, Code, Award, Globe } from "lucide-react";
 import profilePic from "../assets/profilepic.jpg";
+import cvFile from "../assets/Achira-Fonseka-CV-2026.pdf";
+
+const handleDownload = () => {
+  const link = document.createElement("a");
+  link.href = cvFile;
+  link.download = "Achira-Fonseka-CV-2026.pdf";
+  link.click();
+};
 
 // Define the props for StatCard
 interface StatCardProps {
@@ -45,7 +53,7 @@ export const About: React.FC = () => {
               <span className="text-white">Achira Fonseka</span>
             </h3>
             <p className="text-gray-400 mb-7">
-              A Software Engineering student passionate about Front-End development. I focus on
+              A Software Engineering student passionate about Full Stack development. I focus on
               creating engaging digital experiences and always strive to provide the best solutions
               in every project.
             </p>
@@ -60,16 +68,18 @@ export const About: React.FC = () => {
               {/* Download CV & View Projects in Next Line */}
               <div className="flex flex-col md:flex-row items-center gap-4">
                 {/* Download CV Button */}
+                <a href="/assets/Achira-Fonseka-CV-2026.pdf" download> 
                 <button className="h-14 w-64 px-6 rounded-lg bg-purple-600 text-white text-lg font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:bg-purple-700 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
                   <Download size={20} />
                   Download CV
                 </button>
+                </a>
 
                 {/* View Projects Button */}
-                <button className="h-14 w-64 px-6 rounded-lg border border-purple-600 text-purple-400 text-lg font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
+                {/* <button className="h-14 w-64 px-6 rounded-lg border border-purple-600 text-purple-400 text-lg font-bold flex items-center justify-center gap-2 transition-all duration-300 hover:bg-purple-600 hover:text-white hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25">
                   <Code size={20} />
                   View Projects
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
