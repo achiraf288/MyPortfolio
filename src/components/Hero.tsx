@@ -10,7 +10,7 @@ export const Hero = () => {
         </div>
 
         <h1 className="text-5xl md:text-6xl font-bold mb-4 animate-slide-up-delay-1">
-          <span className="text-white">Frontend</span>
+          <span className="text-white">Full Stack</span>
           <br />
           <span className="text-purple-400">Developer</span>
         </h1>
@@ -21,7 +21,7 @@ export const Hero = () => {
         </p>
 
         <div className="flex flex-wrap gap-3 mb-8 animate-slide-up-delay-3">
-          {["React", "JavaScript", "Node.js", "Tailwind"].map((tech, index) => (
+          {["React", "JavaScript",  "Tailwind", "Angular", "Spring Boot"].map((tech, index) => (
             <span
               key={tech}
               className="px-4 py-2 rounded-full bg-opacity-20 bg-purple-500 text-purple-300 hover:bg-opacity-30 transform hover:scale-105 transition-all duration-300 animate-float"

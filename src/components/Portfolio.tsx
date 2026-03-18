@@ -48,7 +48,9 @@ const ProjectCard = ({
 };
 
 export const Portfolio = () => {
-  const [activeTab, setActiveTab] = useState("Projects");
+  const [activeTab, setActiveTab] = useState<"Projects" | "Certificates">(
+    "Projects"
+  );
   const projects = [
     {
       title: "House Rental System Android App (Final HND Project)",
@@ -93,8 +95,6 @@ export const Portfolio = () => {
 
   const renderContent = () => {
     switch (activeTab) {
-      case "Tech Stack":
-        return <TechStack />;
       case "Certificates":
         return (
           <div className="text-center text-gray-400 py-12">
@@ -125,6 +125,7 @@ export const Portfolio = () => {
             learning path.
           </p>
         </div>
+
         <div className="flex justify-center mb-8">
           <div className="flex gap-6">
             <button
@@ -132,12 +133,6 @@ export const Portfolio = () => {
               className="text-gray-400 hover:text-purple-400 transition-colors"
             >
               Projects
-            </button>
-            <button
-              onClick={() => setActiveTab("Tech Stack")}
-              className="text-gray-400 hover:text-purple-400 transition-colors"
-            >
-              Tech Stack
             </button>
             <button
               onClick={() => setActiveTab("Certificates")}
@@ -148,6 +143,16 @@ export const Portfolio = () => {
           </div>
         </div>
         {renderContent()}
+
+        <div className="mt-16">
+          <div className="text-center mb-10">
+            <h3 className="text-3xl font-bold text-white mb-3">Tech Stack</h3>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Tools and technologies I use to build modern web experiences.
+            </p>
+          </div>
+          <TechStack />
+        </div>
       </div>
     </section>
   );
