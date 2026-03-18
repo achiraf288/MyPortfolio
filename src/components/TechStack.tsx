@@ -1,4 +1,6 @@
 import React from "react";
+import { Education } from "./Education";
+import { Experiance } from "./Experiance";
 interface TechCardProps {
   name: string;
   icon: string;
@@ -31,7 +33,7 @@ export const TechStack = () => {
     },
     {
       name: "Tailwind CSS",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
     },
     {
       name: "ReactJS",
@@ -54,23 +56,32 @@ export const TechStack = () => {
       icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
     },
     {
-      name: "Material UI",
-      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+      name: "Spring Boot",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+    },
+    {
+      name: "Cloudflare",
+      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg",
     },
     {
       name: "Vercel",
       icon: "https://assets.vercel.com/image/upload/v1588805858/repositories/vercel/logo.png",
     },
-    {
-      name: "SweetAlert2",
-      icon: "https://sweetalert2.github.io/images/SweetAlert2.png",
-    },
   ];
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-      {technologies.map((tech, index) => (
-        <TechCard key={index} {...tech} />
-      ))}
-    </div>
+    <>
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
+        {technologies.map((tech, index) => (
+          <TechCard key={index} {...tech} />
+        ))}
+      </div>
+      {/* Education & Experience Timeline Tree */}
+      <div id="journey" className="mt-16">
+        <h4 className="text-2xl font-semibold text-purple-400 mb-8 text-center">My Journey</h4>
+        <Experiance />
+        <Education />
+        
+      </div>
+    </>
   );
 };

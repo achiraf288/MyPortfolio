@@ -3,6 +3,7 @@ import { ExternalLink, ArrowRight } from "lucide-react";
 import { TechStack } from "./TechStack";
 import { useNavigate } from "react-router-dom";
 import IotProjectPic from "../assets/IotProjectPic.jpg";
+import FoodHealinePic from "../assets/foodhealinepic.png";
 
 interface ProjectCardProps {
   title: string;
@@ -52,6 +53,13 @@ export const Portfolio = () => {
     "Projects"
   );
   const projects = [
+    {
+      title: "Food Ordering System",
+      description:
+        "Details about the platform's functionality including real-time order tracking, secure payments, restaurant ratings, and the tech stack (React, Node.js, MongoDB)",
+      image: FoodHealinePic,
+      demoLink: "https://quiet-limit-3a31.achiraf28.workers.dev/",
+    },
     {
       title: "House Rental System Android App (Final HND Project)",
       description:
