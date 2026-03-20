@@ -3,6 +3,7 @@ import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import IotProjectPic from "../assets/IotProjectPic.jpg";
 import FoodHealinePic from "../assets/foodhealinepic.png";
+import imaxheadlinepic from "../assets/imaxheadlinepic.png";
 interface StatCardProps {
   value: string;
   label: string;
@@ -29,6 +30,26 @@ export const ProjectDetail = () => {
   const { id } = useParams();
 
   const projects = {
+    "woner-imax-cinema-booking-system": {
+      title: "Woner Imax Cinema Booking System",
+      description: "A comprehensive cinema ticket booking platform that allows users to browse movies, select seats, and book tickets online. Features include real-time seat availability, secure payment integration, movie showtime management, and user account functionality. Built with React, Node.js, and MongoDB for a seamless movie-going experience.",
+      image: imaxheadlinepic,
+      demoLink: "https://dark-cherry-1d9e.achiraf28.workers.dev/",
+      githubLink: "#",
+      techCount: "6",
+      featureCount: "8",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js", "Stripe API", "JWT"],
+      features: [
+        "Real-time seat selection and availability",
+        "Secure online payment processing",
+        "Movie showtime management system",
+        "User registration and authentication",
+        "Booking history and ticket management",
+        "Movie ratings and reviews",
+        "Admin dashboard for cinema management",
+        "Mobile-responsive design"
+      ]
+    },
     "food-ordering-system": {
       title: "Food Ordering System",
       description: "A comprehensive food ordering platform with real-time order tracking, secure payments, restaurant ratings, and advanced filtering. Built with modern web technologies to provide seamless user experience for both customers and restaurant owners.",
@@ -49,6 +70,7 @@ export const ProjectDetail = () => {
         "Mobile-responsive design"
       ]
     },
+    
     "house-rental-system-android-app-(final-hnd-project)": {
       title: "House Rental System Android App",
       description: "A mobile and web-based platform that helps users find and list rental properties. Built with Android Studio and React using a Laravel API, it includes features like property comparison, reviews, and a chatbot for user support.",

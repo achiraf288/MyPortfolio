@@ -4,6 +4,7 @@ import { TechStack } from "./TechStack";
 import { useNavigate } from "react-router-dom";
 import IotProjectPic from "../assets/IotProjectPic.jpg";
 import FoodHealinePic from "../assets/foodhealinepic.png";
+import imaxheadlinepic from "../assets/imaxheadlinepic.png";
 
 interface ProjectCardProps {
   title: string;
@@ -59,6 +60,13 @@ export const Portfolio = () => {
         "Details about the platform's functionality including real-time order tracking, secure payments, restaurant ratings, and the tech stack (React, Node.js, MongoDB)",
       image: FoodHealinePic,
       demoLink: "https://quiet-limit-3a31.achiraf28.workers.dev/",
+    },
+    {
+      title: "Woner Imax Cinema Booking System",
+      description:
+        "A comprehensive cinema ticket booking platform that allows users to browse movies, select seats, and book tickets online. Features include real-time seat availability, secure payment integration, movie showtime management, and user account functionality. Built with React, Node.js, and MongoDB for a seamless movie-going experience.",
+      image: imaxheadlinepic,
+      demoLink: "https://dark-cherry-1d9e.achiraf28.workers.dev/",
     },
     {
       title: "House Rental System Android App (Final HND Project)",
