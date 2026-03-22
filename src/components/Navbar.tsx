@@ -31,7 +31,12 @@ export const Navbar = () => {
         <div className="flex justify-between items-center">
           {/* Logo */}
           <div
-            onClick={() => navigate("/")}
+            onClick={() => {
+              const element = document.querySelector("#home");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
             className="text-purple-400 text-2xl font-bold hover:text-purple-300 transition-all duration-300 cursor-pointer hover:scale-110 transform animate-float"
           >
             Achira Fonseka

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import IotProjectPic from "../assets/IotProjectPic.jpg";
 import FoodHealinePic from "../assets/foodhealinepic.png";
 import imaxheadlinepic from "../assets/imaxheadlinepic.png";
+import velocityrentalsheadlinepic from "../assets/velocityrentalsheadlinepic.png";
 interface StatCardProps {
   value: string;
   label: string;
@@ -28,6 +29,11 @@ const TechnologyBadge = ({ name }: { name: string }) => (
 export const ProjectDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const projects = {
     "woner-imax-cinema-booking-system": {
@@ -70,7 +76,25 @@ export const ProjectDetail = () => {
         "Mobile-responsive design"
       ]
     },
-    
+    "velocity-rentals-car-rental-system": {
+      title: "Velocity Rentals Car Rental System",
+      description: "A comprehensive car rental platform that allows users to browse vehicles, check availability, and make reservations online. Features include real-time inventory management, secure payment processing, and user account management.",
+      image: velocityrentalsheadlinepic,
+      demoLink: "https://yellow-shape-58db.achiraf28.workers.dev/",
+      githubLink: "#",
+      techCount: "8",
+      featureCount: "7",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js", "Stripe API", "JWT", "Tailwind CSS", "Redux"],
+      features: [
+        "Vehicle browsing with advanced search filters",
+        "Real-time availability checking and booking",
+        "Secure online payment processing",
+        "User registration and account management",
+        "Booking history and reservation management",
+        "Admin dashboard for fleet management",
+        "Mobile-responsive design"
+      ]
+    },
     "house-rental-system-android-app-(final-hnd-project)": {
       title: "House Rental System Android App",
       description: "A mobile and web-based platform that helps users find and list rental properties. Built with Android Studio and React using a Laravel API, it includes features like property comparison, reviews, and a chatbot for user support.",
@@ -174,7 +198,7 @@ export const ProjectDetail = () => {
         <div className="text-center">
           <h1 className="text-3xl font-bold text-white mb-4">Project Not Found</h1>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => window.history.back()}
             className="px-6 py-3 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-all duration-300"
           >
             Back to Projects
@@ -188,7 +212,7 @@ export const ProjectDetail = () => {
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="flex items-center gap-3 mb-12 text-gray-400">
           <button
-            onClick={() => navigate("/")}
+            onClick={() => window.history.back()}
             className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-900/20 hover:bg-purple-900/30 transition-all duration-300"
           >
             <ArrowLeft size={20} />

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ExternalLink, ArrowRight } from "lucide-react";
 import { TechStack } from "./TechStack";
 import { useNavigate } from "react-router-dom";
 import IotProjectPic from "../assets/IotProjectPic.jpg";
 import FoodHealinePic from "../assets/foodhealinepic.png";
 import imaxheadlinepic from "../assets/imaxheadlinepic.png";
+import velocityrentalsheadlinepic from "../assets/velocityrentalsheadlinepic.png";
 
 interface ProjectCardProps {
   title: string;
@@ -36,9 +37,11 @@ const ProjectCard = ({
             Live Demo <ExternalLink size={16} />
           </a>
           <button
-            onClick={() =>
-              navigate(`/project/${title.toLowerCase().replace(/\s+/g, "-")}`)
-            }
+            onClick={() => {
+              // Store scroll position before navigation
+              sessionStorage.setItem('portfolioScrollPos', window.scrollY.toString());
+              navigate(`/project/${title.toLowerCase().replace(/\s+/g, "-")}`);
+            }}
             className="text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2 text-sm"
           >
             Details <ArrowRight size={16} />
@@ -53,6 +56,16 @@ export const Portfolio = () => {
   const [activeTab, setActiveTab] = useState<"Projects" | "Certificates">(
     "Projects"
   );
+
+  // Restore scroll position when component mounts
+  useEffect(() => {
+    const savedScrollPos = sessionStorage.getItem('portfolioScrollPos');
+    if (savedScrollPos) {
+      const scrollPos = parseInt(savedScrollPos, 10);
+      window.scrollTo(0, scrollPos);
+      sessionStorage.removeItem('portfolioScrollPos');
+    }
+  }, []);
   const projects = [
     {
       title: "Food Ordering System",
@@ -67,6 +80,13 @@ export const Portfolio = () => {
         "A comprehensive cinema ticket booking platform that allows users to browse movies, select seats, and book tickets online. Features include real-time seat availability, secure payment integration, movie showtime management, and user account functionality. Built with React, Node.js, and MongoDB for a seamless movie-going experience.",
       image: imaxheadlinepic,
       demoLink: "https://dark-cherry-1d9e.achiraf28.workers.dev/",
+    },
+    {
+      title: "Velocity Rentals Car Rental System",
+      description:
+        "A comprehensive car rental platform that allows users to browse vehicles, check availability, and make reservations online. Features include real-time inventory management, secure payment processing, and user account management.",
+      image: velocityrentalsheadlinepic,
+      demoLink: "https://yellow-shape-58db.achiraf28.workers.dev/",
     },
     {
       title: "House Rental System Android App (Final HND Project)",
